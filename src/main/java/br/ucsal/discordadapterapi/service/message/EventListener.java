@@ -1,4 +1,4 @@
-package br.ucsal.discordadapterapi.model;
+package br.ucsal.discordadapterapi.service.message;
 
 import discord4j.core.event.domain.Event;
 import reactor.core.publisher.Mono;

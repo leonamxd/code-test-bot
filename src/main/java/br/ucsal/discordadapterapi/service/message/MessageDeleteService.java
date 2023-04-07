@@ -1,8 +1,7 @@
-package br.ucsal.discordadapterapi.service;
+package br.ucsal.discordadapterapi.service.message;
 
 import org.springframework.stereotype.Service;
 
-import br.ucsal.discordadapterapi.model.EventListener;
 import discord4j.core.event.domain.message.MessageDeleteEvent;
 import reactor.core.publisher.Mono;
 

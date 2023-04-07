@@ -1,14 +1,13 @@
-package br.ucsal.discordadapterapi.service;
+package br.ucsal.discordadapterapi.service.message;
 
 import org.springframework.stereotype.Service;
 
-import br.ucsal.discordadapterapi.model.EventListener;
-import br.ucsal.discordadapterapi.model.MessageListener;
 import discord4j.core.event.domain.message.MessageUpdateEvent;
+import discord4j.core.object.entity.Message;
 import reactor.core.publisher.Mono;
 
 @Service
-public class MessageUpdateService extends MessageListener implements EventListener<MessageUpdateEvent> {
+public class MessageUpdateService implements EventListener<MessageUpdateEvent> {
 
 	@Override
 	public Class<MessageUpdateEvent> getEventType() {
@@ -20,7 +19,9 @@ public class MessageUpdateService extends MessageListener implements EventListen
 		return Mono.just(event)
 				   .filter(MessageUpdateEvent::isContentChanged)
 				   .flatMap(MessageUpdateEvent::getMessage)
-				   .flatMap(super::processMessage);
+				   .flatMap(Message::getChannel)
+				   .flatMap(channel -> channel.createMessage("Mensagens alteradas são desconsideradas pelo bot."))
+				   .then();
 	}
 
 }
