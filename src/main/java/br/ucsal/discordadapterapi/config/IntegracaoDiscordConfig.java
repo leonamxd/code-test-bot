@@ -20,7 +20,8 @@ public class IntegracaoDiscordConfig {
 	@Bean
 	public <T extends Event> GatewayDiscordClient getGatewayDiscordClient(final List<EventListener<T>> eventListeners) {
 		
-		final GatewayDiscordClient client = DiscordClientBuilder.create(token).build()
+		final GatewayDiscordClient client = DiscordClientBuilder.create(token)
+																.build()
 																.login()
 																.block();
 		
