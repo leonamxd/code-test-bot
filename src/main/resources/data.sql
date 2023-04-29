@@ -17,7 +17,8 @@ values
        ('Calcule o produto entre estes dois valore inteiros', 0, 0, 'Produto Simples', 3),
        ('Calcule a média do aluno. Nota A tem peso 3.0 e a nota B tem peso 7.0', 0, 0, 'Média 1', 3),
        ('Calcule a média do aluno. Nota A tem peso 2, nota B tem peso 3 e nota C tem peso 5.0', 0, 0, 'Média 2', 3),
-       ('Calcule e mostre a diferença do produto de A e B pelo produto de C e D segundo a fórmula: DIFERENCA = (A * B - C * D).', 0, 0, 'Diferença', 3);
+       ('Calcule e mostre a diferença do produto de A e B pelo produto de C e D segundo a fórmula: DIFERENCA = (A * B - C * D).', 0, 0, 'Diferença', 3),
+       ('Diga se o número digitado é primo', 0, 0, 'Primo', 3);
 
 INSERT INTO caso_teste(comparacao, entrada, flag_exibir, nome_teste, saida, tarefa_id)
 values
@@ -45,7 +46,11 @@ values
        (1, '10.0 10.0 5.0', true, 'Teste 3', 'MEDIA=7.5', 7),
        (1, '5 6 7 8', true, 'Teste 1', 'DIFERENCA=-26', 8),
        (1, '0 0 7 8', true, 'Teste 2', 'DIFERENCA=-56', 8),
-       (1, '5 6 -7 8', true, 'Teste 3', 'DIFERENCA=86', 8);
+       (1, '5 6 -7 8', true, 'Teste 3', 'DIFERENCA=86', 8),
+        (1, '23', true, 'Número Primo', 'primo', 4),
+       (1, '21', true, 'Número Primo', 'não primo', 4),
+       (1, '51', true, 'Número Primo', 'não primo', 4);
+       
 
 INSERT INTO USUARIO_PERFIL(USUARIO_ID, PERFIL_ID)
 values (1, 1),(2, 2),(3, 3);
